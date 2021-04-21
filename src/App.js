@@ -1,8 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from './actions/shared'
+import LoadingBar from 'react-redux-loading'
 
+import Nav from './components/Nav'
+
+import Home from './screens/Home'
 import Login from './screens/Login'
+import NewQuestion from './screens/NewQuestion'
+import Board from './screens/Board'
 
 class App extends Component {
   componentDidMount() {
@@ -10,21 +17,32 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        {/* <Header/> */}
-        <main>
-          <Login />
-        </main>
-        {/* <Footer/> */}
-      </div>
+      <Router>
+        <Fragment>
+          <LoadingBar />
+          <main>
+            {this.props.authedUser
+              ? <Fragment>
+                  <Nav />
+                  <Route path='/' exact component={Home} />
+                  <Route path='/new' exact component={NewQuestion} />
+                  <Route path='/board' exact component={Board} />
+                  {/* <Route path='/question/:id' exact component={QuestionPage} /> */}
+                </Fragment>
+              : <Login />
+            }
+          </main>
+        </Fragment>
+      </Router>
     )
   } 
 }
 
-// function mapStateToProps({ authedUser }) {
-//   return {
-//     loading: authedUser === null
-//   }
-// }
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser,
+    loading: authedUser === null
+  }
+}
 
-export default connect()(App)
+export default connect(mapStateToProps)(App)
