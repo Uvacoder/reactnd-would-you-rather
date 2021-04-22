@@ -24,12 +24,14 @@ class App extends Component {
             {this.props.authedUser
               ? <Fragment>
                   <Nav />
-                  <Route path='/' exact component={Home} />
-                  <Route path='/new' exact component={NewQuestion} />
-                  <Route path='/board' exact component={Board} />
-                  {/* <Route path='/question/:id' exact component={QuestionPage} /> */}
+                  <div className="max-w-7xl mx-auto p-6">
+                    <Route path='/' exact component={Home} />
+                    <Route path='/new' exact component={NewQuestion} />
+                    <Route path='/board' exact component={Board} />
+                    {/* <Route path='/question/:id' exact component={QuestionPage} /> */}
+                  </div>
                 </Fragment>
-              : <Login />
+              : <div className="max-w-7xl mx-auto p-6"><Login /></div>
             }
           </main>
         </Fragment>
