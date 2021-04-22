@@ -10,6 +10,7 @@ import Home from './screens/Home'
 import Login from './screens/Login'
 import NewQuestion from './screens/NewQuestion'
 import Board from './screens/Board'
+import Question from './screens/Question'
 
 class App extends Component {
   componentDidMount() {
@@ -28,7 +29,7 @@ class App extends Component {
                     <Route path='/' exact component={Home} />
                     <Route path='/new' exact component={NewQuestion} />
                     <Route path='/board' exact component={Board} />
-                    {/* <Route path='/question/:id' exact component={QuestionPage} /> */}
+                    <Route path='/question/:id' exact component={Question} />
                   </div>
                 </Fragment>
               : <div className="max-w-7xl mx-auto p-6"><Login /></div>

@@ -1,7 +1,7 @@
 
 
 export default function User(props) {
-  const { user } = props
+  const { user, context } = props
   return (
     <div className="flex items-center">
       <img
@@ -9,7 +9,12 @@ export default function User(props) {
         src={user.avatarURL}
         alt=""
       />
-      <span className="px-3 pl-2 text-sm font-bold">{user.name}</span>
+      <div className="px-3 pl-2">
+        {context === 'by' && (
+          <div className="text-xs">Written by</div>
+        )}
+        <div className="text-sm font-bold">{user.name}</div>
+      </div>
     </div>
   )
 }
