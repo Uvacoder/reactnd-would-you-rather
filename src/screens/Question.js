@@ -4,6 +4,8 @@ import { classNames } from '../utils/helpers'
 
 import { handleAnswerQuestion } from '../actions/questions'
 
+import NotFound from '../screens/NotFound'
+
 import User from '../components/User'
 import Button from '../components/Button'
 
@@ -21,6 +23,8 @@ class Question extends Component {
   }
 
   render() {
+    if (this.props.notfound) return (<NotFound />)
+
     const { authedUserAnswer, question, user } = this.props
     const options = ['optionOne', 'optionTwo']
     const totalVotes = question.optionOne.votes.length + question.optionTwo.votes.length
@@ -101,6 +105,9 @@ class Question extends Component {
 
 function mapStateToProps({ authedUser, users, questions }, props) {
   const { question_id } = props.match.params
+
+  if (!questions[question_id]) return { notfound: true }
+
   return {
     id: question_id,
     authedUser,
