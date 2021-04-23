@@ -27,9 +27,9 @@ class App extends Component {
                   <Nav />
                   <div className="max-w-7xl mx-auto p-6">
                     <Route path='/' exact component={Home} />
-                    <Route path='/new' exact component={NewQuestion} />
-                    <Route path='/board' exact component={Board} />
-                    <Route path='/question/:id' exact component={Question} />
+                    <Route path='/add' exact component={NewQuestion} />
+                    <Route path='/leaderboard' exact component={Board} />
+                    <Route path='/question/:question_id' exact component={Question} />
                   </div>
                 </Fragment>
               : <div className="max-w-7xl mx-auto p-6"><Login /></div>

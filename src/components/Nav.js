@@ -28,10 +28,10 @@ class Nav extends Component {
                     <NavLink to='/' exact className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' activeClassName='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'>
                       Home
                     </NavLink>
-                    <NavLink to='/new' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' activeClassName='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                    <NavLink to='/add' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' activeClassName='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'>
                       New Question
                     </NavLink>
-                    <NavLink to='/board' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' activeClassName='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                    <NavLink to='/leaderboard' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' activeClassName='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'>
                       Leader Board
                     </NavLink>
                   </nav>
