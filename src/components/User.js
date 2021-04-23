@@ -1,5 +1,3 @@
-
-
 export default function User(props) {
   const { user, context } = props
   return (
@@ -13,7 +11,7 @@ export default function User(props) {
         {context === 'by' && (
           <div className="text-xs">Written by</div>
         )}
-        <div className="text-sm font-bold">{user.name}</div>
+        <div className="font-bold">{user.name}</div>
       </div>
     </div>
   )

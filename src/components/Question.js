@@ -7,7 +7,7 @@ export default function Question(props) {
 
   return (
     <Link to={`/question/${question.id}`} className="bg-white shadow overflow-hidden rounded-lg p-4">
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-4 text-sm">
         <h3 className='text-lg font-bold flex-grow'>
           Would you rather...
         </h3>

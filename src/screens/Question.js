@@ -27,7 +27,7 @@ class Question extends Component {
 
     return (
       <div>
-        <div className="flex items-center mb-4">
+        <div className="flex items-center mb-4 text-sm">
           <h3 className='text-3xl font-bold flex-grow'>
             Would you rather...
           </h3>

@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+import { HiCheck, HiSelector } from "react-icons/hi";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -25,7 +25,7 @@ class UserListBox extends Component {
                   : <span className="flex items-center">Select a user</span>
                 }
                 <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  <SelectorIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                  <HiSelector className="h-5 w-5 text-gray-400" aria-hidden="true" />
                 </span>
               </Listbox.Button>
 
@@ -69,7 +69,7 @@ class UserListBox extends Component {
                                 'absolute inset-y-0 right-0 flex items-center pr-4'
                               )}
                             >
-                              <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                              <HiCheck className="h-5 w-5" aria-hidden="true" />
                             </span>
                           ) : null}
                         </>

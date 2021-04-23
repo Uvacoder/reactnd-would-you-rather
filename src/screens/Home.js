@@ -45,13 +45,22 @@ class Home extends Component {
         </div>
         
         <div className='flex flex-col space-y-4'>
-          {this.state.tab === 'unanswered' && unansweredQuestions.map(question => (
-            <Question question={question} user={users[question.author]} />
-          ))}
+          {this.state.tab === 'unanswered' && (
+            unansweredQuestions.length ?
+              unansweredQuestions.map(question => (
+                <Question question={question} user={users[question.author]} key={question.id} />
+              ))
+            : (<div>You don't have any unanswered questions</div>)
+          )}
 
-          {this.state.tab === 'answered' && answeredQuestions.map(question => (
-            <Question question={question} user={users[question.author]} />
-          ))}
+          {this.state.tab === 'answered' && (
+            answeredQuestions.length ?
+              answeredQuestions.map(question => (
+                <Question question={question} user={users[question.author]} key={question.id}  />
+              ))
+            : (<div>You don't have any answered questions yet</div>)
+          )}
+
           
         </div>
       </div>
